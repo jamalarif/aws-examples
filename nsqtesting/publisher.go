@@ -15,6 +15,7 @@ func main() {
     err = p.Publish("NSQ_Topic_1", []byte("Sample NSQ message 1 "))
     err = p.Publish("NSQ_Topic_2", []byte("Sample NSQ message 1 "))
     err = p.Publish("NSQ_Topic_3", []byte("Sample NSQ message 1 "))
+    err = p.Publish("NSQ_Topic_4", []byte("Sample NSQ message 1 "))
     if err != nil {
         log.Panic(err)
     }
