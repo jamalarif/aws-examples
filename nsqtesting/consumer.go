@@ -13,10 +13,6 @@ func main() {
 
     decodeConfig := nsq.NewConfig()
     c, err := nsq.NewConsumer("NSQ_Topic_1", "NSQ_Channel_1", decodeConfig)
-    c, err := nsq.NewConsumer("NSQ_Topic_1", "NSQ_Channel_2", decodeConfig)
-    c, err := nsq.NewConsumer("NSQ_Topic_2", "NSQ_Channel_1", decodeConfig)
-    c, err := nsq.NewConsumer("NSQ_Topic_3", "NSQ_Channel_1", decodeConfig)
-    c, err := nsq.NewConsumer("NSQ_Topic_4", "NSQ_Channel_2", decodeConfig)
     if err != nil {
         log.Panic("Could not create consumer")
     }
@@ -29,8 +25,6 @@ func main() {
     }))
 
     err = c.ConnectToNSQLookupd("10.0.20.173:4161")
-    err = c.ConnectToNSQLookupd("10.0.0.120:4161")
-    err = c.ConnectToNSQLookupd("10.0.10.234:4161")
     if err != nil {
         log.Panic("Could not connect")
     }
